@@ -12,7 +12,7 @@ class Content_model extends CI_Model
 	function get_3_service($wc_lang)
 	{
 		$this->db->where('wc_type', 'page'); 
-		$this->db->where('wc_category', 'service'); 
+		$this->db->where('wc_category', 'expertise'); 
 		$this->db->where('wc_lang', $wc_lang); 
 		$this->db->order_by('wc_id', 'RANDOM');
 		$this->db->join('web_gallery', 'web_gallery.wg_wc_id = web_content.wc_id', 'left');
@@ -28,6 +28,18 @@ class Content_model extends CI_Model
 		$this->db->where('wc_lang', $wc_lang);
 		$this->db->join('web_gallery', 'web_gallery.wg_wc_id = web_content.wc_id', 'left');
 		$this->db->order_by('wc_id', 'DESC');
+		$query_splash_news = $this->db->get('web_content');
+		return $query_splash_news->result();
+	}
+	
+	# get news at home page
+	function get_news($wc_lang)
+	{
+		$this->db->where('wc_type', 'news'); 
+		$this->db->where('wc_lang', $wc_lang);
+		$this->db->join('web_gallery', 'web_gallery.wg_wc_id = web_content.wc_id', 'left');
+		$this->db->order_by('wc_id', 'DESC');
+    	$this->db->limit(1);
 		$query_splash_news = $this->db->get('web_content');
 		return $query_splash_news->result();
 	}
@@ -122,7 +134,7 @@ class Content_model extends CI_Model
 		return $query->result();
 	}
 	
-	function content_list($wc_category)
+	function content_list($wc_category, $limit, $offset)
 	{
 		$this->db->where('wc_category', $wc_category); 
 		$this->db->join('web_gallery', 'web_gallery.wg_wc_id = web_content.wc_id', 'left');

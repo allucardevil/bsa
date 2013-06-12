@@ -33,14 +33,15 @@ class En extends CI_Controller {
 		
 		# call model for 3 random services
 		$data['query'] = $this->content_model->get_3_service($wc_lang);
+		$data['query_splash_news'] = $this->content_model->get_news($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
 		
 		# display airline logo on footer based on images on ./image/logo
 		$this->load->helper('directory');
 		$data['logo'] = directory_map('./images/logo/');
 		$slide['image'] = $this->content_model->get_image_gallery('slideshow');
 		
-		# call model for splash news on footer
-		$data['query_splash_news'] = $this->content_model->get_spalash_news($wc_lang);
+		$data['slideshow'] = $this->content_model->get_image_gallery('slideshow');
 		
 		$this->load->view('en/header', $data);
 		#$this->load->view('en/slideshow', $slide);
