@@ -71,12 +71,13 @@
     <!-- BEGIN ADS -->
     <a href="#"><img src="<?php echo base_url(); ?>images/ads/bali-airport-vip-service.jpg" alt="" class="ad" / width="120"></a> <a href="#"><img src="<?php echo base_url(); ?>images/ads/bali-airport-vip-service.jpg" alt="" class="ad-right" / width="120"></a> <a href="#"><img src="<?php echo base_url(); ?>images/ads/bali-airport-vip-service.jpg" alt="" class="ad" width="120" /></a> <a href="#"><img src="<?php echo base_url(); ?>images/ads/bali-airport-vip-service.jpg" alt="" class="ad-right" width="120" /></a>
     <!-- END ADS -->
-    <h2 class="heading-blue">Flight Schedule</h2>
-    <iframe src="http://gfis.gapura.co.id/dps" width="250" height="250" frameborder="0" style="-webkit-transform:scale(1);-moz-transform-scale(1);></iframe>
+    <h2 class="heading-blue">Flight Information</h2>
+    <iframe src="http://gfis.gapura.co.id/dps" width="250" height="250"></iframe>
     
-    <h2 class="heading">Celebrity Sightings</h2>
+    <h2 class="heading">Latest Image</h2>
     <img src="<?php echo base_url(); ?>images/casey.jpg" alt="" class="ad" /> <img src="<?php echo base_url(); ?>images/hobo.jpg" alt="" class="ad-right" />
-    <h2 class="heading">In the Community</h2>
+    
+    <h2 class="heading">Career</h2>
     <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
     <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
   </div>
@@ -86,7 +87,7 @@
 <!-- BEGIN EXTRAS -->
 <div id="extras">
   <div id="recommended">
-    <h2 class="heading">Recommended Stories</h2>
+    <h2 class="heading">Service Available</h2>
     <ul>
       <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
       <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
@@ -95,10 +96,10 @@
     </ul>
   </div>
   <div id="programs">
-    <h2 class="heading">What's On Tonight</h2>
+    <h2 class="heading">What To Do</h2>
     <img src="<?php echo base_url(); ?>images/rick.jpg" alt="" /> <img src="<?php echo base_url(); ?>images/cbc.png" alt="" /> </div>
   <div id="cartoon">
-    <h2 class="heading">Humour</h2>
+    <h2 class="heading">Airport Information</h2>
     <img src="<?php echo base_url(); ?>images/cartoon.jpg" alt="" /> </div>
 </div>
 <!-- END EXTRAS -->

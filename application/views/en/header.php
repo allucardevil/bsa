@@ -93,6 +93,8 @@ $(window).load(function() {
     <li><a href="#">Likedln</a></li>
     <li>|</li>
     <li><a href="#">Twitter</a></li>
+    <li>|</li>
+    <li><a href="#">Instagram</a></li>
   </ul>
 </div>
 <!-- END SUB NAV -->
