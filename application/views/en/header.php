@@ -90,11 +90,15 @@ $(window).load(function() {
     <li>|</li>
     <li><a href="#">Facebook</a></li>
     <li>|</li>
-    <li><a href="#">Likedln</a></li>
+    <li><a href="#">LinkedIn</a></li>
     <li>|</li>
     <li><a href="#">Twitter</a></li>
     <li>|</li>
     <li><a href="#">Instagram</a></li>
+    <li>|</li>
+    <li><a href="#">RSS</a></li>
+    <li>|</li>
+    <li><a href="#">Email</a></li>
   </ul>
 </div>
 <!-- END SUB NAV -->
