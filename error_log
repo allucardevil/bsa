@@ -1,0 +1,19 @@
+[01-May-2013 02:08:05 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2400 bytes) in /home/gapurac/public_html/dps/system/libraries/Image_lib.php on line 514
+[01-May-2013 02:09:02 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2400 bytes) in /home/gapurac/public_html/dps/system/libraries/Image_lib.php on line 514
+[01-May-2013 02:09:19 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2400 bytes) in /home/gapurac/public_html/dps/system/libraries/Image_lib.php on line 514
+[01-May-2013 02:12:02 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 600 bytes) in /home/gapurac/public_html/dps/system/libraries/Image_lib.php on line 514
+[01-May-2013 02:13:01 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2400 bytes) in /home/gapurac/public_html/dps/system/libraries/Image_lib.php on line 514
+[01-May-2013 02:30:20 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2400 bytes) in /home/gapurac/public_html/dps/system/libraries/Image_lib.php on line 514
+[01-May-2013 03:04:17 UTC] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting ']' in /home/gapurac/public_html/dps/application/controllers/team.php on line 751
+[28-May-2013 05:28:37 UTC] PHP Fatal error:  Class 'Admin_model' not found in /home/gapurac/public_html/dps/system/core/Loader.php on line 303
+[28-May-2013 05:29:35 UTC] PHP Fatal error:  Class 'Content_model' not found in /home/gapurac/public_html/dps/system/core/Loader.php on line 303
+[28-May-2013 05:58:04 UTC] PHP Parse error:  syntax error, unexpected $end in /home/gapurac/public_html/dps/application/controllers/team.php on line 94
+[28-May-2013 07:20:14 UTC] PHP Fatal error:  Out of memory (allocated 3670016) (tried to allocate 20213 bytes) in /home/gapurac/public_html/dps/system/core/Output.php on line 164
+[28-May-2013 07:20:25 UTC] PHP Fatal error:  Out of memory (allocated 1572864) (tried to allocate 19456 bytes) in /home/gapurac/public_html/dps/system/helpers/date_helper.php on line 435
+[28-May-2013 08:16:10 UTC] PHP Fatal error:  Call to a member function get_spalash_news() on a non-object in /home/gapurac/public_html/dps/application/controllers/team.php on line 113
+[29-May-2013 03:53:17 UTC] PHP Fatal error:  Call to a member function get_spalash_news() on a non-object in /home/gapurac/public_html/dps/application/controllers/team.php on line 113
+[29-May-2013 06:49:49 UTC] PHP Fatal error:  Cannot redeclare User::register() in /home/gapurac/public_html/dps/application/controllers/user.php on line 231
+[29-May-2013 06:51:46 UTC] PHP Fatal error:  Cannot redeclare User::register() in /home/gapurac/public_html/dps/application/controllers/user.php on line 231
+[29-May-2013 06:51:50 UTC] PHP Fatal error:  Cannot redeclare User::register() in /home/gapurac/public_html/dps/application/controllers/user.php on line 231
+[29-May-2013 09:04:05 UTC] PHP Parse error:  syntax error, unexpected $end in /home/gapurac/public_html/dps/application/views/en/page/single.php on line 58
+[29-May-2013 09:07:10 UTC] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE in /home/gapurac/public_html/dps/application/controllers/en.php on line 513
