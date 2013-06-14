@@ -139,6 +139,7 @@ class Content_model extends CI_Model
 		$this->db->where('wc_category', $wc_category); 
 		$this->db->join('web_gallery', 'web_gallery.wg_wc_id = web_content.wc_id', 'left');
 		$this->db->limit($limit, $offset); 
+		$this->db->order_by('wc_id', 'RANDOM');
 		$query = $this->db->get('web_content');
 		return $query->result();
 	}

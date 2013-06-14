@@ -14,7 +14,7 @@
 			if ($row->wc_upload_by == NULL)
 				{$row->wc_upload_by = 'Anonymous';}?>
 			<img src="<?php echo base_url()?>images/big/<?php echo $row->wg_image_name?>" alt="<?php echo $row->wc_title ?>" width="370px">
-			<a href="<?php echo base_url().'index.php/'.$row->wc_lang . '/' . $row->wc_type . '/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title)  . '/',$row->wc_title;?>" ><h1><?php echo $row->wc_title?></h1></a>
+			<a href="<?php echo base_url().'index.php/'.$row->wc_lang . '/' . $row->wc_type . '/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title)  . '/'?>" ><h1><?php echo $row->wc_title?></h1></a>
 			<p class="author"><?php echo $row->wc_upload_by?> | <span><?php echo mdate('%d-%M-%Y',strtotime(substr($row->wc_date,0,10))) ?></span></p>
 			<p><?php echo substr($row->wc_content,0,60).' ....';?></p>
 		<?php } }?>
@@ -31,7 +31,7 @@
           <param name="allowscriptaccess" value="never" />
           <embed src="http://www.youtube.com/v/B0jhJA1Hjxk&amp;hl=en_US&fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="never" allowfullscreen="true" width="400" height="300"></embed>
         </object>
-        <h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
+        <h2><a href="#">Ngurah Rai Bali International Airport</a></h2>
         <p class="author"><span>09.18.09</span></p>
         <p><a href="#">More video &raquo;</a></p>
       </div>
@@ -79,8 +79,7 @@
     <iframe src="http://gfis.gapura.co.id/dps" width="250" height="250"></iframe>
     
     <h2 class="heading">Career</h2>
-    <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
-    <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
+    <h4><a href="#">Klik here for more news about company career</a></h4>
   </div>
   <!-- END SIDEBARS -->
 </div>
@@ -88,26 +87,28 @@
 <!-- BEGIN EXTRAS -->
 <div id="extras">
   <div id="recommended">
-    <h2 class="heading">Service Available</h2>
-    <ul>
-      <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-      <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-      <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-      <li class="last"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-    </ul>
+    <h2 class="heading">Restaurants and Cafes</h2>
+       <?php if (isset($ead_info)){
+		foreach ($ead_info as $row) 
+		{
+			echo '<li>'. anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) .'</li>';
+		}}?>
   </div>
   <div id="programs">
-    <h2 class="heading">What To Do</h2>
-    <img src="<?php echo base_url(); ?>images/rick.jpg" alt="" /> <img src="<?php echo base_url(); ?>images/cbc.png" alt="" /> </div>
+    <h2 class="heading">Travelling</h2>
+    <?php if (isset($pax_info)){
+		foreach ($pax_info as $row) 
+		{
+			echo '<li>'. anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) .'</li>';
+		}}?>
+  </div>
   <div id="cartoon">
     <h2 class="heading">Airport Information</h2>
-    <ul>
       <?php if (isset($airport_info)){
 		foreach ($airport_info as $row) 
 		{
 			echo '<li>'. anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) .'</li>';
-		}}?>
-    </ul> </div>
+		}}?></div>
 </div>
 <!-- END EXTRAS -->
 

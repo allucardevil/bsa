@@ -71,7 +71,7 @@ $(window).load(function() {
 <!-- BEGIN NAV -->
 <div id="nav">
   <ul>
-    <li><a href="#">Home</a></li>
+    <li><a href="<?php echo base_url()?>">Home</a></li>
     <li><a href="#">Airport Information</a></li>
     <li><a href="#">Flight Information</a></li>
     <li><a href="#">Airline Service</a></li>
@@ -86,13 +86,13 @@ $(window).load(function() {
 <div id="sub-nav">
   <ul>
     <li class="title">follow us :</li>
-    <li><a href="#">Google+</a></li>
+    <li><a href="https://plus.google.com/u/0/115728792488502211304/">Google+</a></li>
     <li>|</li>
-    <li><a href="#">Facebook</a></li>
+    <li><a href="https://www.facebook.com/BaliAirportServiceAgent">Facebook</a></li>
     <li>|</li>
     <li><a href="#">LinkedIn</a></li>
     <li>|</li>
-    <li><a href="#">Twitter</a></li>
+    <li><a href="https://twitter.com/BaliAirportServ">Twitter</a></li>
     <li>|</li>
     <li><a href="#">Instagram</a></li>
     <li>|</li>

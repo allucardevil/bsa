@@ -148,6 +148,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', end
   border-right: 1px solid #ddd;
 }
 
+#main-content {
+  float: left;
+  width: 640px;
+  min-height: 300px;
+  padding: 0 10px 0 10px;
+  border-right: 1px solid #ddd;
+}
+
 #more-headlines {
   float: right;
   width: 220px;

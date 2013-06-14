@@ -1,11 +1,7 @@
 <!-- BEGIN FOOTER -->
 <div id="footer">
 <a href="#"><img src="<?php echo base_url(); ?>images/certification/gapura-angkasa-achievement.jpg"  width="980"/></a> 
-				<?php foreach ($query_splash_news as $splash_news)
-				{
-				echo anchor('' . $splash_news->wc_lang . '/news/' . $splash_news->wc_sub_category . '/' . $splash_news->wc_id, $splash_news->wc_title);
-				}
-				?>
+				
 							<?php /*foreach ($logo as $key => $value)
 								{*/
 							   ?>
