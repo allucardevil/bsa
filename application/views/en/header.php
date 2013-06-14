@@ -72,11 +72,11 @@ $(window).load(function() {
 <div id="nav">
   <ul>
     <li><a href="<?php echo base_url()?>">Home</a></li>
-    <li><a href="#">Airport Information</a></li>
     <li><a href="#">Flight Information</a></li>
-    <li><a href="#">Airline Service</a></li>
-    <li><a href="#">Passenger Service</a></li>
-    <li><a href="#">Cargo Service</a></li>
+    <li><a href="<?php echo base_url()?>en/airports_info">Airport Info</a></li>
+    <li><a href="<?php echo base_url()?>en/passengers_info">Passenger Info</a></li>
+    <li><a href="<?php echo base_url()?>en/travel_list">Travels</a></li>
+    <li><a href="<?php echo base_url()?>en/shopping_and_eating_list">Shopping and Eating</a></li>
    
     <li class="last"><a href="#">Carreer</a></li>
   </ul>

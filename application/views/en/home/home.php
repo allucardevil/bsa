@@ -12,11 +12,12 @@
 			if ($row->wg_image_name == NULL)
 				{$row->wg_image_name = 'images.jpg';}
 			if ($row->wc_upload_by == NULL)
-				{$row->wc_upload_by = 'Anonymous';}?>
+				{$row->wc_upload_by = 'Publisher';}?>
 			<img src="<?php echo base_url()?>images/big/<?php echo $row->wg_image_name?>" alt="<?php echo $row->wc_title ?>" width="370px">
-			<a href="<?php echo base_url().'index.php/'.$row->wc_lang . '/' . $row->wc_type . '/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title)  . '/'?>" ><h1><?php echo $row->wc_title?></h1></a>
+			<a href="<?php echo base_url().'index.php/'.$row->wc_lang . '/' . $row->wc_type . '/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . preg_replace('/[^\w]+/', '-',dash($row->wc_title))  . '/'?>" ><h1><?php echo $row->wc_title?></h1></a>
 			<p class="author"><?php echo $row->wc_upload_by?> | <span><?php echo mdate('%d-%M-%Y',strtotime(substr($row->wc_date,0,10))) ?></span></p>
 			<p><?php echo substr($row->wc_content,0,60).' ....';?></p>
+        <p><a href="<?php echo base_url()?>en/news_list">More news &raquo;</a></p>
 		<?php } }?>
         <!-- <img src="<?php echo base_url(); ?>images/blank.jpg" alt="" />
         <h1><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h1>
@@ -29,11 +30,10 @@
           <param name="movie" value="http://www.youtube.com/v/B0jhJA1Hjxk&amp;hl=en_US&amp;fs=1&" />
           <param name="allowFullScreen" value="true" />
           <param name="allowscriptaccess" value="never" />
-          <embed src="http://www.youtube.com/v/B0jhJA1Hjxk&amp;hl=en_US&fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="never" allowfullscreen="true" width="400" height="300"></embed>
+		  <iframe width="400" height="300" src="http://www.youtube.com/embed/gej6O0xW3Rs" frameborder="0" allowfullscreen></iframe>
         </object>
         <h2><a href="#">Ngurah Rai Bali International Airport</a></h2>
-        <p class="author"><span>09.18.09</span></p>
-        <p><a href="#">More video &raquo;</a></p>
+        <p class="author">Publisher  <span></span></p>
       </div>
       <div id="more-headlines">
         
@@ -48,17 +48,17 @@
 					{
 						
 						
-						echo '<h3>' . anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) . '</h3>'; 
+						echo '<h3>' . anchor(''. $row->wc_lang . '/'.$row->wc_category.'/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . preg_replace('/[^\w]+/', '-',dash($row->wc_title)) . '/', $row->wc_title) . '</h3>'; 
 						echo '<p>' . word_limiter($row->wc_content, 25) . '</p>';
-						echo '<p>' . anchor(''. $row->wc_lang . '/services/' . $row->wc_sub_category . '/', 'read more'). '</p>'; 
+						echo '<p>' . anchor(''. $row->wc_lang . '/'.$row->wc_category.'/' . $row->wc_sub_category . '/', 'read more'). '</p>'; 
 						
 					}
 					else
 					{
 						
-						echo '<h3>' . anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) . '</h3>'; 
+						echo '<h3>' . anchor(''. $row->wc_lang . '/'.$row->wc_category.'/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . preg_replace('/[^\w]+/', '-',dash($row->wc_title)) . '/', $row->wc_title) . '</h3>'; 
 						echo '<p>' . word_limiter($row->wc_content, 25) . '</p>';
-						echo '<p>' . anchor(''. $row->wc_lang . '/services/' . $row->wc_sub_category . '/', 'read more'). '</p>'; 
+						echo '<p>' . anchor(''. $row->wc_lang . '/'.$row->wc_category.'/' . $row->wc_sub_category . '/', 'read more'). '</p>'; 
 						
 					}
 			
@@ -79,7 +79,7 @@
     <iframe src="http://gfis.gapura.co.id/dps" width="250" height="250"></iframe>
     
     <h2 class="heading">Career</h2>
-    <h4><a href="#">Klik here for more news about company career</a></h4>
+    <h4><a href="#">Click here for more news about company career</a></h4>
   </div>
   <!-- END SIDEBARS -->
 </div>
@@ -91,7 +91,7 @@
        <?php if (isset($ead_info)){
 		foreach ($ead_info as $row) 
 		{
-			echo '<li>'. anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) .'</li>';
+			echo '<li>'. anchor(''. $row->wc_lang . '/'.$row->wc_category.'/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . preg_replace('/[^\w]+/', '-',dash($row->wc_title)) . '/', $row->wc_title) .'</li>';
 		}}?>
   </div>
   <div id="programs">
@@ -99,7 +99,7 @@
     <?php if (isset($pax_info)){
 		foreach ($pax_info as $row) 
 		{
-			echo '<li>'. anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) .'</li>';
+			echo '<li>'. anchor(''. $row->wc_lang . '/'.$row->wc_category.'/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . preg_replace('/[^\w]+/', '-',dash($row->wc_title)) . '/', $row->wc_title) .'</li>';
 		}}?>
   </div>
   <div id="cartoon">
@@ -107,7 +107,7 @@
       <?php if (isset($airport_info)){
 		foreach ($airport_info as $row) 
 		{
-			echo '<li>'. anchor(''. $row->wc_lang . '/service/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . dash($row->wc_title) . '/', $row->wc_title) .'</li>';
+			echo '<li>'. anchor(''. $row->wc_lang . '/'.$row->wc_category.'/' . $row->wc_sub_category . '/' . $row->wc_id . '/' . preg_replace('/[^\w]+/', '-',dash($row->wc_title)) . '/', $row->wc_title) .'</li>';
 		}}?></div>
 </div>
 <!-- END EXTRAS -->

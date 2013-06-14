@@ -354,6 +354,10 @@ class En extends CI_Controller {
         $this->pagination->initialize($config);
 		  
 		$data['query'] = $this->content_model->get_content($wc_lang, $wc_type, $wc_category, $wc_sub_category, $limit, $offset);
+		$data['content'] = $this->content_model->get_content($wc_lang, $wc_type, $wc_category, $wc_sub_category, $limit, $offset);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
         $data['link'] = $this->pagination->create_links();
 		
 		# displya airline logo on footer based on images on ./image/logo
@@ -363,7 +367,7 @@ class En extends CI_Controller {
 		# call model for splash news on footer
 		$data['query_splash_news'] = $this->content_model->get_spalash_news($wc_lang);
 		
-		$this->load->view('en/header');
+		$this->load->view('en/header', $data);
 		//$this->load->view('en/slideshow');
 		$this->load->view('en/page/page', $data);
 		//$this->load->view('en/page/sidebar');
@@ -395,7 +399,7 @@ class En extends CI_Controller {
 		$data['query_splash_news'] = $this->content_model->get_spalash_news($wc_lang);
 		
 		
-		$this->load->view('en/header');
+		$this->load->view('en/header', $data);
 		//$this->load->view('en/slideshow');
 		$this->load->view('en/page/page', $data);
 		//$this->load->view('en/page/sidebar');
@@ -638,6 +642,10 @@ class En extends CI_Controller {
         $this->pagination->initialize($config);
 		  
 		$data['query'] = $this->content_model->get_content($wc_lang, $wc_type, $wc_category, $wc_sub_category, $limit, $offset);
+		$data['content'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
 		/*$data['pfc'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'pre_flight_check' );
 		$data['si'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'security_information' );
 		$data['lgg'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'luggage' );
@@ -671,11 +679,16 @@ class En extends CI_Controller {
 		$wc_id = $this->uri->segment(4, 0);
 				
 		$data['query'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_id);
-		$data['pfc'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'pre_flight_check' );
+		/*$data['pfc'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'pre_flight_check' );
 		$data['si'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'security_information' );
 		$data['lgg'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'luggage' );
 		$data['arr'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'arrivals' );
-		$data['dep'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'departures' );
+		$data['dep'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'departures' ); */
+		$data['content'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_id);
+		$data['query'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_id);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
 		
 		# displya airline logo on footer based on images on ./image/logo
 		$this->load->helper('directory');
@@ -734,6 +747,10 @@ class En extends CI_Controller {
         $this->pagination->initialize($config);
 		  
 		$data['query'] = $this->content_model->get_content($wc_lang, $wc_type, $wc_category, $wc_sub_category, $limit, $offset);
+		$data['content'] = $this->content_model->content_list('travels', 3, 0);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
 		/*$data['gta'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'go_and_to_the_airport' );
 		$data['dopu'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'dropping_off_and_picking_up' );
 		$data['tt'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'transfer_terminal' );
@@ -763,16 +780,8 @@ class En extends CI_Controller {
 		$wc_type = 'page';
 		$wc_category = 'travels';
 		$wc_sub_category = $this->uri->segment(3, 'go_and_to_the_airport');
-		$wc_title = $this->uri->segment(4, 0);
+		$wc_id = $this->uri->segment(4, 0);
 			
-		if ($this->uri->segment(5) == NULL)
-		{
-			$wc_title = strtoupper(str_replace('_',' ',$wc_title));
-			$data['query'] = $this->content_model->content_by_title($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_title);
-		} else
-		{
-			$data['query'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_title);
-		}
 		
 		# displya airline logo on footer based on images on ./image/logo
 		$this->load->helper('directory');
@@ -780,6 +789,11 @@ class En extends CI_Controller {
 		
 		# call model for splash news on footer
 		$data['query_splash_news'] = $this->content_model->get_spalash_news($wc_lang);
+		$data['content'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_id);
+		$data['query'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_id);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
 		/*$data['gta'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'go_and_to_the_airport' );
 		$data['dopu'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'dropping_off_and_picking_up' );
 		$data['tt'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'transfer_terminal' );
@@ -835,6 +849,10 @@ class En extends CI_Controller {
         $this->pagination->initialize($config);
 		  
 		$data['query'] = $this->content_model->get_content($wc_lang, $wc_type, $wc_category, $wc_sub_category, $limit, $offset);
+		$data['content'] = $this->content_model->get_content($wc_lang, $wc_type, $wc_category, $wc_sub_category, $limit, $offset);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
 		//$data['fas'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'facilities_and_services' );
         $data['link'] = $this->pagination->create_links();
 		
@@ -923,6 +941,10 @@ class En extends CI_Controller {
         $this->pagination->initialize($config);
 		  
 		$data['query'] = $this->content_model->get_content($wc_lang, $wc_type, $wc_category, $wc_sub_category, $limit, $offset);
+		$data['content'] = $this->content_model->content_list('shopping_and_eating', 3, 0);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
 		/*$data['shp'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'shopping' );
 		$data['ead'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'eating_and_drinking' );
 		$data['sf'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'store_finder' );
@@ -954,7 +976,11 @@ class En extends CI_Controller {
 		$wc_sub_category = $this->uri->segment(3, 'shopping');
 		$wc_id = $this->uri->segment(4, 0);
 				
+		$data['content'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_id);
 		$data['query'] = $this->content_model->content_by_id($wc_lang, $wc_type, $wc_category, $wc_sub_category, $wc_id);
+		$data['serv'] = $this->content_model->get_3_service($wc_lang);
+		$data['airport_info'] = $this->content_model->content_list('passenger_info', 3, 0);
+		$data['pax_info'] = $this->content_model->content_list('travels', 3, 0);
 		/*$data['shp'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'shopping' );
 		$data['ead'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'eating_and_drinking' );
 		$data['sf'] = $this->content_model->get_content_unlimited($wc_lang, $wc_type, $wc_category, 'store_finder' );
